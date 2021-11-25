@@ -1,4 +1,5 @@
 import { tLyrics } from "./happy.js";
+import Timer from "./components/timer";
 
 function App() {
   const min = tLyrics[0][0].substring(1, 3);
@@ -9,7 +10,12 @@ function App() {
   console.log(sec);
   console.log(msec);
   console.log(text);
-  return <div>coucou</div>;
+
+  return (
+    <div className="App">
+      <Timer></Timer>
+    </div>
+  );
 }
 
 export default App;
