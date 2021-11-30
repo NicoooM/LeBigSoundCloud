@@ -4,7 +4,7 @@ import Player from "../../components/AudioPlayer";
 import ReactAudioPlayer from "react-audio-player";
 import { useState, useEffect } from "react";
 
-function Song() {
+function Song({ song }) {
   const [seconds, setSeconds] = useState(0);
   const [isOn, setIsOn] = useState(false);
   const [parole, setParole] = useState("");
@@ -20,14 +20,10 @@ function Song() {
         setParole={setParole}
       ></Timer>
       <p>{parole}</p>
-      <Player
+      {/* <Player
         url={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}
-      />
-      <ReactAudioPlayer
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        controls
-        onPlay={() => setIsOn(true)}
-      />
+      /> */}
+      <ReactAudioPlayer src={song} controls onPlay={() => setIsOn(true)} />
     </div>
   );
 }
