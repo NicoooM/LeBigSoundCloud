@@ -1,0 +1,12 @@
+a chauqe rendu
+	parcours tout le fichier
+		affiche les paroles dont le time code < au timer
+
+--trop de pacours pour rien
+-->normalement on devrait parcourir qu'une seule fois le fichier
+
+
+lorsque le temps de la parole est atteint alors affiche la jusqu'à la prochaine
+
+au début du prog lire le time code de la premiere parole
+(on attend jusqu'à ce qu'on y soit) et dès qu'on y est on l'affiche et on lit le prochain time code et là on boucle

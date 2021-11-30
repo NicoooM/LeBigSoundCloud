@@ -1,4 +1,6 @@
 export const tLyrics = [
+  ["[00:01.00]", "PAROLES 00:01.00"],
+  ["[00:03.00]", "PAROLES 00:03.00"],
   ["[00:07.11]", "It might seem crazy what I am 'bout to say"],
   ["[00:13.10]", "Sunshine she's here, you can take a break"],
   ["[00:19.12]", "I'm a hot air balloon that could go to space"],
