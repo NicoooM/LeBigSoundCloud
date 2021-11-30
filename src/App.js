@@ -1,47 +1,23 @@
-import { tLyrics } from "./happy.js";
-import Timer from "./components/timer";
-import Player from "./components/AudioPlayer";
-import ReactAudioPlayer from "react-audio-player";
-import { useState, useEffect } from "react";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from "./pages/Home"
+import Song from "./pages/Song"
 
-function App() {
-  const [seconds, setSeconds] = useState(0);
-  const [isOn, setIsOn] = useState(false);
-  const [parole, setParole] = useState("");
-
+export default function App() {
   return (
-    <div className="App">
-      <Timer
-        seconds={seconds}
-        setSeconds={setSeconds}
-        isOn={isOn}
-        setIsOn={setIsOn}
-        tLyrics={tLyrics}
-        setParole={setParole}
-      ></Timer>
-      <p>{parole}</p>
-      <Player
-        url={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}
-      />
-      <ReactAudioPlayer
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        controls
-        onPlay={() => setIsOn(true)}
-      />
-    </div>
+    <Router>
+        {/* A <Routes> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/song" element={<Song />}/>
+          <Route path="*" element={<p>ceci est une 404 sale con</p>}/>
+        </Routes>
+    </Router>
   );
 }
-
-// <ul>
-// {tLyrics.map((line, index) => {
-//   let min = parseInt(line[0].substring(1, 3));
-//   let sec = parseFloat(line[0].substring(4, 9));
-//   sec = sec + 60 * min;
-//   let text = line[1];
-//   if (sec < seconds) {
-//     return <li>{text}</li>;
-//   }
-// })}
-// </ul>
-
-export default App;
