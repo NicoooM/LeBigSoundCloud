@@ -3,6 +3,7 @@ import Timer from "../../components/Timer";
 import Player from "../../components/AudioPlayer";
 import ReactAudioPlayer from "react-audio-player";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Song({ song }) {
   const [seconds, setSeconds] = useState(0);
