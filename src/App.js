@@ -3,24 +3,35 @@ import Timer from "./components/timer";
 import { useState, useEffect } from "react";
 
 function App() {
-  const min = tLyrics[0][0].substring(1, 3);
-  const sec = tLyrics[0][0].substring(4, 6);
-  const msec = tLyrics[0][0].substring(7, 9);
-  const text = tLyrics[0][1];
-
-  const [lyrics, setLyrics] = useState(tLyrics[0][1]);
-  // const []
+  const [seconds, setSeconds] = useState(0);
+  const [isOn, setIsOn] = useState(false);
+  const [parole, setParole] = useState("");
 
   return (
     <div className="App">
-      <Timer></Timer>
-      <ul>
-        {tLyrics.map((line, index) => {
-          return <li key={index}>{line[0] + " " + line[1]}</li>;
-        })}
-      </ul>
+      <Timer
+        seconds={seconds}
+        setSeconds={setSeconds}
+        isOn={isOn}
+        setIsOn={setIsOn}
+        tLyrics={tLyrics}
+        setParole={setParole}
+      ></Timer>
+      <p>{parole}</p>
     </div>
   );
 }
+
+// <ul>
+// {tLyrics.map((line, index) => {
+//   let min = parseInt(line[0].substring(1, 3));
+//   let sec = parseFloat(line[0].substring(4, 9));
+//   sec = sec + 60 * min;
+//   let text = line[1];
+//   if (sec < seconds) {
+//     return <li>{text}</li>;
+//   }
+// })}
+// </ul>
 
 export default App;
