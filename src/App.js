@@ -1,5 +1,7 @@
 import { tLyrics } from "./happy.js";
 import Timer from "./components/timer";
+import Player from "./components/AudioPlayer";
+import ReactAudioPlayer from "react-audio-player";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -18,6 +20,14 @@ function App() {
         setParole={setParole}
       ></Timer>
       <p>{parole}</p>
+      <Player
+        url={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}
+      />
+      <ReactAudioPlayer
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        controls
+        onPlay={() => setIsOn(true)}
+      />
     </div>
   );
 }
