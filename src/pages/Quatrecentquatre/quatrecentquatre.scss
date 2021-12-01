@@ -1,0 +1,77 @@
+@import "../../style/reset.scss";
+
+body {
+  background-color: #242424;
+}
+
+main {
+  font-family: Poppins;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+
+  .ph-regular {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #cbcbcb;
+  }
+
+  .container {
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    h1 {
+      color: #cbcbcb;
+    }
+
+    .line {
+      background-color: #cbcbcb;
+      height: 2px;
+      width: 50px;
+      border-radius: 1px;
+    }
+  }
+
+  .even-center-container {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+  }
+
+  .center-container {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+
+    .big-text {
+      writing-mode: vertical-rl;
+      color: #3a3a3a;
+      font-weight: bold;
+      font-size: 180px;
+    }
+
+    .small-text {
+      color: #cbcbcb;
+      font-weight: bold;
+      font-size: 64px;
+    }
+
+    .smaller-text-container {
+      position: relative;
+      .smaller-text {
+        position: absolute;
+        color: #cbcbcb;
+        font-weight: 500;
+        font-size: 24px;
+        max-width: 340px;
+        width: 100%;
+      }
+    }
+  }
+}
