@@ -1,14 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { songs } from "../../data.js";
+import "./home.scss";
 
 function Home() {
   console.log(songs);
   return (
-    <div>
+    <main className="test">
+      <header className="container">
+        <h1 className="ph-regular">Bonjour.</h1>
+        {/* le svg des settings */}
+      </header>
+
       <ul>
         {Object.values(songs).map((song) => (
-          <li>
+          <div>
             <Link
               to={{
                 pathname: `/song/${song.slug}`,
@@ -16,10 +22,10 @@ function Home() {
             >
               {song.title}
             </Link>
-          </li>
+          </div>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }
 

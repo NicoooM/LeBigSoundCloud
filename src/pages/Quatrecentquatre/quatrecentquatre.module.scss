@@ -11,7 +11,7 @@ main {
   height: 100vh;
   justify-content: space-between;
 
-  .ph-regular {
+  .ph_regular {
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -36,42 +36,30 @@ main {
     }
   }
 
-  .even-center-container {
+  .even_center_container {
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
     top: 50%;
     left: 50%;
   }
 
-  .center-container {
+  .center_container {
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
     top: 50%;
     left: 50%;
 
-    .big-text {
+    .big_text {
       writing-mode: vertical-rl;
       color: #3a3a3a;
       font-weight: bold;
       font-size: 180px;
     }
 
-    .small-text {
+    .small_text {
       color: #cbcbcb;
       font-weight: bold;
       font-size: 64px;
-    }
-
-    .smaller-text-container {
-      position: relative;
-      .smaller-text {
-        position: absolute;
-        color: #cbcbcb;
-        font-weight: 500;
-        font-size: 24px;
-        max-width: 340px;
-        width: 100%;
-      }
     }
   }
 }
