@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { songs } from "../../data.js";
 
 function Home() {
-  console.log(songs);
   return (
     <div>
       <ul>

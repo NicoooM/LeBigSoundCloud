@@ -2,6 +2,7 @@
 import ReactAudioPlayer from "react-audio-player";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import styles from "./Player.module.scss";
 
 function Player({ title, artist, lyrics, song, cover }) {
   const [parole, setParole] = useState("");
@@ -30,33 +31,50 @@ function Player({ title, artist, lyrics, song, cover }) {
 
   return (
     <div>
-      <div>
-        <Link to="/">Homepage</Link>
-        <div>
+      <div className={styles.header}>
+        <Link to="/" className={styles.back}>
+          <svg
+            width="12"
+            height="18"
+            viewBox="0 0 8 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 1L1 7L7 13"
+              stroke="#CBCBCB"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+        <div className={styles.header_right}>
           <div>
-            <p>{title}</p>
+            <h2>{title}</h2>
             <p>{artist}</p>
           </div>
-          <img alt="img" src={cover} />
+          <img alt="img" src={cover} className={styles.cover} />
         </div>
       </div>
-      <div>
-        <p>{parole}</p>
-        <p>{newParoles}</p>
-        <ReactAudioPlayer
-          listenInterval={100}
-          src={song}
-          controls
-          onListen={(sec) => {
-            onListen(sec);
-          }}
-          onSeeked={(event) => {
-            const data = new Date(event.timeStamp);
-            console.log(data);
-            onListen(event.timeStamp);
-          }}
-        />
+      <div className={styles.lyrics}>
+        <p className={styles.current_lyric}>{parole}</p>
+        <p className={styles.next_lyric}>{newParoles}</p>
       </div>
+      <ReactAudioPlayer
+        className={styles.player}
+        listenInterval={100}
+        src={song}
+        controls
+        onListen={(sec) => {
+          onListen(sec);
+        }}
+        onSeeked={(event) => {
+          const data = new Date(event.timeStamp);
+          console.log(data);
+          onListen(event.timeStamp);
+        }}
+      />
     </div>
   );
 }
