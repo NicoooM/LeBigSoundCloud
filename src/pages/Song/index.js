@@ -17,6 +17,7 @@ function Song() {
         artist={song.artist}
         lyrics={song.lyrics}
         song={song.music}
+        cover={song.cover}
       />
     </div>
   );

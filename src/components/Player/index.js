@@ -3,7 +3,7 @@ import ReactAudioPlayer from "react-audio-player";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Player({ title, artist, lyrics, song }) {
+function Player({ title, artist, lyrics, song, cover }) {
   const [parole, setParole] = useState("");
   const [lyricIndex, setLyricIndex] = useState(0);
   const [timeCode, setTimeCode] = useState(
@@ -37,7 +37,7 @@ function Player({ title, artist, lyrics, song }) {
             <p>{title}</p>
             <p>{artist}</p>
           </div>
-          <img alt="img" />
+          <img alt="img" src={cover} />
         </div>
       </div>
       <div>
