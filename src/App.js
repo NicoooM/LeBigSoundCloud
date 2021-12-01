@@ -10,7 +10,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/song" element={<Song song={song} />} />
+        <Route path="/song/:slug" element={<Song />} />
         <Route path="*" element={<Quatrecentquatre />} />
       </Routes>
     </Router>

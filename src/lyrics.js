@@ -1,4 +1,4 @@
-export const tLyrics = [
+export const happyLyrics = [
   ["[00:01.00]", "PAROLES 00:01.00"],
   ["[00:03.00]", "PAROLES 00:03.00"],
   ["[00:07.11]", "It might seem crazy what I am 'bout to say"],
