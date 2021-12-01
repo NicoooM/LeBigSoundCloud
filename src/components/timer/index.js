@@ -49,7 +49,7 @@ export default function Timer({
 
   return (
     <div>
-      <h1>{seconds.toFixed(2)}</h1>
+      {/* <h1>{seconds.toFixed(2)}</h1> */}
       <button id="btn" onClick={() => setIsOn(!isOn)}>
         {isOn ? "Pause" : "Démarrer"}
       </button>
