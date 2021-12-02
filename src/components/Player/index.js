@@ -1,6 +1,6 @@
 // import { lyrics } from "../../happy";
 import ReactAudioPlayer from "react-audio-player";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Player.module.scss";
 
@@ -10,6 +10,10 @@ function Player({ title, artist, lyrics, song, cover }) {
   const [timeCode, setTimeCode] = useState(
     parseFloat(lyrics[0][0].substring(4, 9))
   );
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [percentage, setPercentage] = useState(0);
   const [newParoles, setNewParoles] = useState(lyrics[0][1]);
 
   function onListen(sec) {
@@ -61,12 +65,54 @@ function Player({ title, artist, lyrics, song, cover }) {
         <p className={styles.current_lyric}>{parole}</p>
         <p className={styles.next_lyric}>{newParoles}</p>
       </div>
+      <div className={styles.player}>
+        <progress min="0" max="100" value={percentage} />
+        <button
+          onClick={() => {
+            let player = document.getElementById("player");
+            isPlaying !== true ? player.play() : player.pause();
+            setIsPlaying(!isPlaying);
+          }}
+          className={styles.play_button}
+        >
+          {isPlaying ? (
+            <svg
+              width="20"
+              height="22"
+              viewBox="0 0 20 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="5" height="22" rx="2.5" fill="#CBCBCB" />
+              <rect x="15" width="5" height="22" rx="2.5" fill="#CBCBCB" />
+            </svg>
+          ) : (
+            <svg
+              width="21"
+              height="23"
+              viewBox="0 0 21 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.5 8.90193C21.5 10.0566 21.5 12.9434 19.5 14.0981L5.25 22.3253C3.25 23.48 0.749999 22.0366 0.749999 19.7272V3.27276C0.749999 0.963355 3.25 -0.480018 5.25 0.674682L19.5 8.90193Z"
+                fill="#CBCBCB"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
       <ReactAudioPlayer
-        className={styles.player}
+        id="player"
         listenInterval={100}
         src={song}
-        controls
+        onLoadedMetadata={(e) => {
+          let player = document.getElementById("player");
+          setDuration(player.duration);
+        }}
         onListen={(sec) => {
+          setCurrentTime(sec);
+          setPercentage((sec * 100) / duration);
           onListen(sec);
         }}
         onSeeked={(event) => {
