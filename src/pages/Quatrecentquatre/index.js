@@ -3,15 +3,17 @@ import styles from "./quatrecentquatre.module.scss";
 
 function quatrecentquatre() {
   return (
-    <main>
+    <main className={styles.main}>
       <header className={styles.container}>
-        <h1 className={styles.ph_regular}>Dang.</h1>
+        <Link to="/" className={styles.ph_regular}>
+          <h1>Dang.</h1>
+        </Link>
         <div className={styles.line}></div>
       </header>
 
       <div className={styles.center_container}>
         <p className={styles.big_text}>404.</p>
-        <div className={styles.even_center_container}>
+        <div className={styles.small_text_container}>
           <p className={styles.small_text}>404.</p>
         </div>
       </div>

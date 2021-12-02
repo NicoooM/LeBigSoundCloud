@@ -1,0 +1,92 @@
+@import "../../style/reset.scss";
+@import "../../style/common.scss";
+
+.song_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 30px;
+  height: 150px;
+  border-radius: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.song_info_container {
+  position: absolute;
+  z-index: 7;
+  .song_title {
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .song_artist {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: 300;
+  }
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.92%, #000000 100%);
+  border-radius: 24px;
+  z-index: 2;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px 0px 30px;
+}
+
+.ph_regular {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.ph_thin {
+  font-weight: thin;
+  font-size: 24px;
+}
+
+.qm_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #3a3a3a;
+}
+
+.pop_up {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  margin: 0 auto;
+  width: 90vw;
+  background: #3a3a3a;
+  border-radius: 25px;
+  z-index: 10;
+}
+
+.text_pop_up {
+  margin: 10%;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.cross {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

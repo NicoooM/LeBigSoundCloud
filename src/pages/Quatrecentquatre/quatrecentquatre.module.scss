@@ -4,7 +4,7 @@ body {
   background-color: #242424;
 }
 
-main {
+.main {
   font-family: Poppins;
   display: flex;
   flex-direction: column;
@@ -17,12 +17,16 @@ main {
     font-size: 24px;
     color: #cbcbcb;
   }
+  .ph_regular:hover {
+    text-decoration: underline;
+  }
 
   .container {
     padding: 5%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 5vh 5vw;
 
     h1 {
       color: #cbcbcb;
@@ -36,7 +40,7 @@ main {
     }
   }
 
-  .even_center_container {
+  .small_text_container {
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
     top: 50%;
