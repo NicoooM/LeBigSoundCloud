@@ -4,7 +4,6 @@ import { songs } from "../../data.js";
 import "./home.scss";
 
 function Home() {
-  console.log(songs);
   return (
     <main className="test">
       <header className="container">

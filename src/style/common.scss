@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+h1 {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: bold;
+  color: $primary;
+}
+
+h2 {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 500;
+  color: $primary;
+}
+
+p {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 300;
+  color: $primary;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  font-family: "Poppins";
+  text-decoration: none;
+  color: $primary;
+}
+
+.flex {
+  display: flex;
+  &.sb {
+    justify-content: space-between;
+  }
+  &.sa {
+    justify-content: space-around;
+  }
+  &.aic {
+    align-items: center;
+  }
+}
