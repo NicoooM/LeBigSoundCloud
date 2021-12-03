@@ -4,16 +4,18 @@ import { songs } from "../../data.js";
 import styles from "./home.module.scss";
 
 function Home() {
-  const [helpOpen, setHelpOpen] = useState(false);
-  // helpOpen ? dhqshqs : dhjsqdk;
+  const [helpOpen, setHelpOpen] = useState(false); //utilisation du hook useStates de react afin d'avoir l'état de la popup
   return (
     <main>
       <header className={styles.header}>
         <h1 className={styles.ph_regular}>Bonjour.</h1>
         <div onClick={() => setHelpOpen(true)} className={styles.qm_container}>
+          {/* utilisation du onClick de react afin de savoir quand l'utilisateur click sur le ? */}
           <p className={styles.ph_thin}>?</p>
         </div>
       </header>
+      {/* début popup */}
+      {/* si helpOpen = true alors on suit les premières parentheses */}
       {helpOpen ? (
         <div className={styles.pop_up}>
           <svg
@@ -39,8 +41,10 @@ function Home() {
           </p>
         </div>
       ) : (
+        //sinon, on suit et rien ne se passe car les deuxièmes parentheses sont vides
         ""
       )}
+      {/* fin popup */}
 
       <ul>
         {Object.values(songs).map((song) => (

@@ -67,6 +67,11 @@ function Player({ title, artist, lyrics, song, cover }) {
       </div>
       <div className={styles.player}>
         <progress min="0" max="100" value={percentage} />
+        <p>{`${Math.round(duration / 60)}:${
+          Math.round(duration % 60).toString().length === 1
+            ? `0${Math.round(duration % 60)}`
+            : Math.round(duration % 60)
+        }`}</p>
         <button
           onClick={() => {
             let player = document.getElementById("player");
