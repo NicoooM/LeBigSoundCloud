@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Quatrecentquatre from "./pages/Quatrecentquatre";
 import Home from "./pages/Home";
 import Song from "./pages/Song";
-import song from "./songs/happy.mp3";
 import "./style/common.scss";
 
 export default function App() {
