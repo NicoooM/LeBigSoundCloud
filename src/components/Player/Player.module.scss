@@ -58,6 +58,7 @@
 }
 
 .play_button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,4 +94,9 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   background-color: #cbcbcb;
   border-radius: 5px;
+}
+
+.time:nth-child(2) {
+  margin-left: auto;
+  margin-right: 5%;
 }

@@ -67,11 +67,14 @@ function Player({ title, artist, lyrics, song, cover }) {
       </div>
       <div className={styles.player}>
         <progress min="0" max="100" value={percentage} />
-        <p>{`${Math.round(duration / 60)}:${
-          Math.round(duration % 60).toString().length === 1
-            ? `0${Math.round(duration % 60)}`
-            : Math.round(duration % 60)
-        }`}</p>
+        <div className={styles.time}>
+          {/* <p></p> */}
+          <p>{`${Math.round(duration / 60)}:${
+            Math.round(duration % 60).toString().length === 1
+              ? `0${Math.round(duration % 60)}`
+              : Math.round(duration % 60)
+          }`}</p>
+        </div>
         <button
           onClick={() => {
             let player = document.getElementById("player");
@@ -106,6 +109,12 @@ function Player({ title, artist, lyrics, song, cover }) {
             </svg>
           )}
         </button>
+
+        {/* <p>{`${Math.floor(currentTime / 60)}:${
+          Math.floor(currentTime) >= 60
+            ? Math.floor(currentTime - 60 * (currentTime % 60))
+            : Math.floor(currentTime)
+        }`}</p> */}
       </div>
       <ReactAudioPlayer
         id="player"
@@ -116,9 +125,10 @@ function Player({ title, artist, lyrics, song, cover }) {
           setDuration(player.duration);
         }}
         onListen={(sec) => {
-          setCurrentTime(sec);
+          setCurrentTime(Math.round(sec));
           setPercentage((sec * 100) / duration);
           onListen(sec);
+          console.log(currentTime);
         }}
         onSeeked={(event) => {
           const data = new Date(event.timeStamp);
